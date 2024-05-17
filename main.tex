@@ -1,0 +1,148 @@
+\documentclass[9pt]{beamer}
+\usepackage{amsfonts,amsmath}
+\usepackage[inkscape=newer]{svg}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{import}
+\usepackage{subcaption}
+\usepackage{cleveref}
+\usepackage{caption}
+\usepackage{calc}
+\usepackage{mathtools}
+\usepackage{adjustbox}
+\usepackage{pgffor}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usepackage{appendixnumberbeamer}
+\usepackage[duration=45,enduserslide=45]{pdfpc}
+\usepackage[backend=biber,natbib=true,sorting=none,style=apa, maxcitenames=2,eprint=false,isbn=false,doi=true]{biblatex}
+%%% Beamerscape
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+\textblockorigin{0mm}{0mm}
+%%% -------------------------------
+
+\usetikzlibrary{calc,positioning}
+\setbeamertemplate{caption}[numbered]
+
+%%% Svglayers
+\newcommand<>{\fullsizegraphic}[2][1]{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[at=(current page.center),anchor=center] {
+				\includegraphics[width=#1\columnwidth]{#2}};%
+	\end{tikzpicture}
+}
+%%% -------------------------------
+
+\NewCommandCopy\olditemize\itemize
+\NewCommandCopy\endolditemize\enditemize
+\newenvironment{titemize}[1][]{%
+	\olditemize[#1]}{\endolditemize}
+\renewenvironment{itemize}[1][]{%
+	\setbeamercovered{invisible}\olditemize[#1]}{\endolditemize}
+
+%%% -------------------------------
+
+\tikzset{
+    invisible/.style={opacity=0,text opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+	},
+}
+
+
+%%% -------------------------------
+%\renewcommand{\k}{k_{\text{B}}}
+\renewcommand{\k}{k_{B}}
+\newcommand{\p}{\partial}
+
+%%% -------------------------------
+
+\pdfsuppresswarningpagegroup=1
+
+\svgpath{{svg},{figures}}
+\graphicspath{{figures},{results-figs}}
+\addbibresource{refs.bib}
+
+\usetheme{bbeamer}
+
+\title{Statistical mechanics model for\\legislative networks}
+\subtitle{\textit{Master in Physics Thesis Defense}}
+\author{Benjamín Edwards}
+\date{April, 2024}
+
+%\setbeamerfont{normal text}{size=\small}
+%\AtBeginDocument{\usebeamerfont{normal text}}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamercovered{invisible}
+%------------------------------------------------
+%\includeonly{{physics}}
+
+\begin{document}
+\begin{frame}
+	\setbeamertemplate{footline}[frame number]{}
+	\begin{tikzpicture}[remember picture, overlay, 
+		logo/.style={anchor=south west, 
+		yshift=-18mm,
+		at=(current page.north west)}]
+		\node[logo,xshift=8.5mm] {\includesvg[height=14mm]{logo-uchile}};
+		\node[logo,xshift=30mm] {\includegraphics[height=11mm]{logo-dfc}
+};
+	\end{tikzpicture}
+	\begin{tikzpicture}[remember picture, overlay, 
+		logo/.style={anchor=south east, 
+		yshift=-18mm,
+		at=(current page.north east)}]
+		\node[logo,xshift=-6mm] {\includegraphics[height=9mm]{logo-planets}};
+	\end{tikzpicture}
+	%\includegraphics[height=10mm]{logo-dfc}\hspace{2ex}
+	%\includegraphics[height=8mm]{logo-planets}
+
+	\begin{textblock}{1}(0.07,0.4)
+		{\usebeamerfont{title}\usebeamercolor[fg]{title}{\huge \baselineskip=14pt\inserttitle\par}}
+		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+		{\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+		{\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}
+	\end{textblock}
+
+	\begin{textblock}{1}(0.07,0.8)
+	\usebeamercolor[fg]{date}
+	\usebeamerfont{date}
+	Thesis advisors:\\
+	Dr. Denisse Pastén\\
+	Dr. Víctor Muñoz
+	\end{textblock}
+
+	\begin{textblock}{1}(0.3,0.8)
+	\usebeamercolor[fg]{date}
+	\usebeamerfont{date}
+		Evaluation Committee:\\
+		Dr. Sergio Davis\\
+		Dr. Flavia Pennini
+	\end{textblock}
+
+\end{frame}
+
+\import{.}{intro}
+\import{.}{network}
+\import{.}{model}
+\import{.}{physics}
+\import{.}{data}
+\import{.}{conclusions}
+
+\begin{frame}
+	\centering
+	This work has been presented on the conference  Complex Networks 2023\\[4em]
+
+	This thesis has been funded by FONDECYT grant number N$^\circ$ 1201967\\(Dr. Víctor Muñoz).
+\end{frame}
+
+\backmatter
+
+\import{.}{appendix}
+
+%%%%
+
+\end{document}

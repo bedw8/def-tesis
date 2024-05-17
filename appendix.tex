@@ -1,0 +1,89 @@
+\appendix
+\section{Appendix}
+
+\begin{frame}[allowframebreaks]{Appendix}
+Recalling that $M_\ell = \|\vec{n}\|^2  - \frac{N(N+1)}{2}$, and differentiating it in order to find its critical point, we get 
+$$\frac{\p}{\p n_i} \|\vec{n}\| =0,$$
+which we already pointed out it yields to $\vec{n} = \{N / k, \ldots, N / k \}$.
+
+\framebreak
+
+ \begin{figure}
+     \centering
+	 \includegraphics[height=0.7\textheight]{se_me}
+     \caption{Link entropy against link magnetization. Orange line is $s_\ell$ from \cref{eq:s_norms} while blue dots represent configurations from \Cref{fig:ps1}}
+     \label{fig:sL_mL}
+ \end{figure}
+ \begin{figure}[!h]
+     \centering
+	 \includegraphics[height=0.7\textheight]{st_mt}
+     \caption{Triangle entropy against triangle magnetization. Orange line is $s_t$ from \cref{eq:s_norms} while blue dots represent configurations from \Cref{fig:ps1}}
+     \label{fig:sT_mT}
+ \end{figure}
+
+\framebreak
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{mL_mT}
+    \caption{Triangle magnetization with respect to link magnetization. We have used the same label style for the relevant vote scenarios as in \Cref{fig:ps1}, to illustrate the map between the configuration space and the $m_t-m_\ell$ space. Values were computed for $N=155$.\label{fig:mL_mT}} 
+\end{figure}    
+
+\framebreak
+\begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{mL_mT_paths}
+    \caption{Same as in \Cref{fig:mL_mT}, with paths $A,B,C$ and $D$ marked up on it. We followed the same graphic style for paths from \Cref{fig:ps_paths} for easier comparison. Path $D$ was drawn with $\alpha=5$.\label{fig:mL_mT_paths}}
+\end{figure}
+\framebreak
+\begin{equation}
+    m_{t} =  \frac{3 \alpha m_{\ell}}{N - 2} + \frac{3\alpha\big[N(1-N)+4\alpha(N-\alpha)\big]}{N(N-1)(N-2)} + 1.
+\label{eq:mT_of_mL}
+\end{equation}
+The equation for path $A$ is
+\begin{equation}
+    \begin{split}
+        f(m_\ell) = 8N^2 - 9(N-1)(Nm_\ell -2)- (3m_\ell(N-1) + 3+N)^{3 / 2}
+    \end{split}
+    \label{eq:rs}
+\end{equation}
+\framebreak
+\begin{figure}[h]
+    \centering
+	\includegraphics[height=0.5\textwidth]{ts_ML}
+    \caption{Fluctuation of the link magnetization. Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts1}
+\end{figure}
+\framebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_MT}
+    \caption{Fluctuation of the triangle magnetization. Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts2}
+\end{figure}
+\framebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_SL}
+    \caption{Fluctuation of the link entropy (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts3}
+\end{figure}
+\framebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_ST}
+    \caption{Fluctuation of the triangle magnetization (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts4}
+\end{figure}
+\framebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_T}
+    \caption{Fluctuation of the T (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts5}
+\end{figure}
+
+\end{frame}
+
+
+

@@ -1,0 +1,171 @@
+
+\subsection{Spin system}
+
+\begin{frame}[t]{Spin systems}
+	\only<1>{\vspace{10em}\centering Turn for the physics!} \only<2->{
+		We are going to construct two spin systems.\\[1em]
+
+		In one of them the links signs will act as spins, while in the other the triangles balance will play that role.\\[3em]
+		\noindent\begin{columns}
+			\column{0.2\textwidth}{
+				\begin{itemize}
+					\item Links:
+				\end{itemize}
+				\vspace{5em}
+				\begin{itemize}
+					\item Triangles:
+				\end{itemize}
+			}
+			\column{0.7\textwidth}{
+			}
+		\end{columns}
+		\foreach \n in {1,...,2}{
+			\only<+(1)>{\fullsizegraphic{spins-step-\n.pdf}}
+		}
+	}
+
+
+\end{frame}
+
+\subsection{Counting spins}
+\begin{frame}{Counting spins}
+	We are going to count the amount of links and triangles.
+\begin{itemize}
+	\item Allow us to measure the probability of choosing a negative sign link or a balanced triangle randomly on a given network
+	\item It will let us construct physical quantities
+\end{itemize}	
+
+\onslide<+(1)->{%
+Since the network in model is fully connected, then
+\begin{itemize}
+	\item Amount of links:
+ \begin{equation}
+     L = \binom N 2 = \frac{N(N-1)}{2}
+ \end{equation}   
+	\item Amount of triangles:
+\begin{equation}
+    C = \binom N 3 = \frac{N(N-1)(N-2)}{6}
+\end{equation}
+\end{itemize}}
+\onslide<+(1)->
+We still want to count each kind of links (unsigned and signed) and each kind of triangle (balanced and unbalanced).
+\end{frame}
+
+\newcommand{\tikzmark}[1]{\tikz[baseline,remember picture] \coordinate (#1) {};}
+\begin{frame}[b]{Counting links}
+\setbeamercovered{invisible}
+\begin{itemize}
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[] 
+	\item[]
+	\item[]
+	\item<+(1)-> Positive links \begin{equation}
+		L^{+} = \frac{1}{2}\sum_i^k n_i^2 - \frac{1}{2}\sum_i^{k} {n_i} =  \frac{1}{2} \|\vec n\|^2 - \frac{N}{2}. \label{eq:Lplus} \end{equation}
+		\item<+(1)-> Negative links 
+			\begin{equation}
+L^{-} = \tikzmark{bsum}\sum_{i<j}^k n_in_j\tikzmark{asum} = \frac{N^{2}}{2} - \frac{1}{2}\|\vec n\|^2 \label{eq:Lminus} 
+\end{equation}
+\end{itemize}
+
+\def\keeplast{\ifnum\n<3 \onslide<+(-2)> \else \onslide<+(-2)->\fi}
+\foreach \n in {1,...,3}{
+	\keeplast{%
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[at=(current page.center),anchor=center,shift=({-13mm,7mm})] {%
+				\includegraphics[width=0.9\columnwidth]{count-links-step-\n.pdf}
+		};
+	\end{tikzpicture}
+	}
+}
+
+\foreach \i in {1,...,1}{%
+\pgfmathtruncatemacro\z{\i+4}%
+\onslide<+(-2)>{%
+\begin{tikzpicture}[remember picture, overlay]
+	\node[at=(current page.east),
+		anchor=east,
+		shift=({-12mm,17mm})] (matrix) {%
+        \includegraphics{svg/nxn-step-\i.pdf} };
+	\node[at=(matrix.north),shift=({0cm,2mm})] {$\vec{n}\otimes \vec{n}$};
+\end{tikzpicture}	
+	}
+}
+
+\begin{tikzpicture}[remember picture, overlay]
+	\node[red,draw, 
+		  at=(bsum.west),
+		  anchor=west,
+		  inner sep=6.2mm,
+		  outer sep=1mm,
+		  shift=({-1mm,0.5mm}),
+		  visible on=<+(-3)>] (highlight) {};	
+	  \draw[-stealth,red,visible on=<.(-3)>] (highlight.south east) to[out=-25,in=-90,distance=3cm] (matrix.south);
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}[b]{Counting triangles}{Type $+++$} \foreach \n in {1,...,2}{
+        \only<\n>{\fullsizegraphic{count-t+++-step-\n.pdf}}
+}
+
+	Similar to positive links, this type of triangles are only present inside of the groups.%
+\begin{align}
+	C_{+++} &=
+\sum_a^k n_a(n_a -1)(n_a -2)/6\nonumber\\
+&=  \frac{1}{6} \bigg[\|\vec n\|^3_3-3\|\vec n\|^{2} + 2N\bigg], \label{eq:C+++}
+\end{align}
+\end{frame}
+
+\begin{frame}[b]{Counting triangles}{Type $---$}
+\foreach \n in {1,...,2}{
+        \only<\n>{\fullsizegraphic{count-t----step-\n.pdf}}
+    }
+
+These triangles will be formed by three communities putting one node each one. 
+\begin{align}
+	C_{---} &=
+\sum_{a<b<c}^k n_a n_b n_c =
+\frac{1}{6}\bigg[N^{3} + 2\|\vec n\|^{3}_{3} - 3N \|\vec n\|^{2} \bigg]. \label{eq:C---}
+\end{align}
+\end{frame}
+
+\begin{frame}[b]{Counting triangles}{Type $+--$}
+ \foreach \n in {1,...,2}{
+	         \only<\n>{\fullsizegraphic{count-t+---step-\n.pdf}}
+ }
+
+Finally, the remaining type of triangle is counted as follows
+\begin{align}
+	C_{+--} &= \sum_{i<j}^{k} \frac{n_in_j(n_j-1) + n_jn_i(n_i-1)}{2}\nonumber \\
+&= \frac{1}{2}\bigg[(N+1)\|\vec n\|^{2}-\|\vec n\|_{3}^{3}-N^{2} \bigg] \label{eq:C+--}
+\end{align}
+\end{frame}
+
+\begin{frame}{State probabilities}
+	We can define the probabilities of finding a spin in a particular state, on a given network.\\[1em]
+
+First, we will have that 
+\begin{equation}
+	p_{\ell}^{+} = \frac{L^{+}}{L},\qquad \text{and}\qquad
+	p_{\ell}^{-} = \frac{L^{-}}{L}
+\end{equation}
+are the probabilities for positive and negative links, respectively.\\[1em]
+
+And also, 
+\begin{equation}
+	p_{t}^{+} = \frac{C_{+++} + C_{+--}}{C},\qquad \text{and}\qquad
+	p_{t}^{-} = \frac{C_{---}}{C}
+\end{equation}
+are the probabilities for balanced and unbalanced triangles.
+
+\end{frame}
+
+
+

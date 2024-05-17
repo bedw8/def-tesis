@@ -1,0 +1,31 @@
+\section{Data}
+\begin{frame}{Evaluating the model}
+\only<+-.(2)>{%
+	\begin{itemize}
+	\item<.-> We gathered all vote records from the Chilean Chamber of Deputies, spanning from 2018 to 2022.
+	\item<+> All situations rather than voting For or Against, were considered as abstention.
+\end{itemize}	
+}
+\only<+(1)>{%
+\vspace{-2.2mm}
+\begin{figure}[h]
+    \centering
+    \fbox{\adjincludegraphics[trim={{.168\width} {.13\height} {0.17\width} {.13\height}},clip,height=0.8\textheight]{phasespace_plane_data}}
+    \caption{Roll-call records of the 2018-2022 term of the Chilean Chamber of Deputies, in the configuration space, represented red dots. The axes $n_1,n_2$ and $n_3$ represent the options \emph{for}, \emph{against}, and \emph{abstain}, respectively.}
+    \label<.->{fig:ps_data}
+\end{figure}
+}
+\only<+(1)>{%
+\vspace{-2mm}
+\begin{figure}[h]
+    \centering
+    \fbox{\adjincludegraphics[trim={{.17\width} {.12\height} {0.17\width} {.13\height}},clip,height=0.8\textheight]{mean_position}}
+	\vspace{-2mm}
+    \caption{Configuration space with the mean position of roll-call records of the 2018-2022 term of the Chilean Chamber of Deputies, painted as a red dot on top of it. In addition the ring of maximum $s_\ell$ was drawn for reference. The axes $n_1,n_2$ and $n_3$ represent the same as in \Cref{fig:ps_data}.}
+    \label{fig:ps_data_mean}
+\end{figure}
+}
+
+\end{frame}
+
+

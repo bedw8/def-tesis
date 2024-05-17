@@ -1,0 +1,51 @@
+
+%%%%
+%\setbeamertemplate{frametitle continuation}{}
+%\begin{frame}[allowframebreaks]{Summary and conclusions}
+\begin{frame}{Summary and conclusions}
+	\only<+>{%
+	{\centering
+	We built a statistical mechanical model for legislative networks from roll-call votes
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\only<+-.(3)>{%
+\onslide<.->{%
+Entropy:
+\begin{itemize}
+	\item Link entropy $s_\ell$ has its minimum on unanimity scenarios, where there is no uncertainty about links sign, since they are all positive. Then, moving toward the center of the configuration space we would find its maximum where $L^{+}=L^{-}$
+	\item Triangle entropy  seems it can not distinguish between a unanimous vote and a vote disputed between two options.
+\end{itemize}}
+\onslide<+->{%
+Magnetization:
+\begin{itemize}
+	\item We could say $m_\ell$ represent how close or far a vote is from unanimity.
+	\item $m_t$ does not give much more information than triangle entropy.
+	\begin{itemize}
+		\item Triangle $[---]$ being the only unbalanced ones.
+	\end{itemize}
+\end{itemize}}
+\onslide<+->{%
+Temperature:
+\begin{itemize}
+	\item $T=0$ on unanimity scenarios 
+	\item The $L^{+}=L^{-}$ area acts as an interface between between $T>0$ and $T<0$
+	\item Near this region, temperature is very sensitive, diverging to $+\infty$ or  $-\infty$
+\end{itemize}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\only<+->{%
+	\begin{itemize}[<+(2)->]
+	\item<.-> The model we have presented offers a physical formalism to quantify disagreement from roll-call votes outcomes.
+
+	\item This goes in the direction of understanding what \emph{strong polarization} is, but by itself it is not enough. 
+		\item In order to accomplish it, we think an analysis for the physical properties $(m_\ell,m_t,s_\ell,s_t,H,T)$ of a set of multiple votes might be needed. 
+	\item While comparing with real data from Chilean Chamber of Deputies, the mean position of all votes results close to the region of link entropy ($L^{+} = L^{-}$) 
+	\item For this, comparing the model with a larger dataset could be useful. 
+	%\item It might be possible to extend the formalising toward a canonical ensamble. 
+\end{itemize}}
+
+
+\end{frame}
+
