@@ -1,10 +1,8 @@
 \appendix
 \section{Appendix}
 
-\begin{frame}{Appendix}
 
-\only<+>{
-\framesubtitle{Critical points of link entropy}
+\begin{frame}{Critical points of link entropy}
 \setlength\fboxrule{0.5pt}
 \setlength\fboxsep{4pt}
 \fbox{\begin{minipage}{0.6\textwidth}
@@ -23,10 +21,9 @@ We differentiate $s_\ell$ to get its critical points.
 	\item $\left[ \frac{\|\vec{n}\|}{L}  \frac{\p}{\p n_i} \|\vec{n}\|  \right] =0\qquad  \to \qquad \vec{n} = \{N / k, \ldots, N / k \}$ 
 	\item $\Big[ \ln(p^{+}) - \ln(p^{-}) \Big] = 0 \qquad \to \qquad L^{+} = L^{-}$
 \end{itemize}
-}
+\end{frame}
 
-\only<+>{
-\framesubtitle{Maximum of link entropy}
+\begin{frame}{Maximum of link entropy}
 We can get an expression for the points where $L^{+}=L^{-}$.
 \begin{align*}
      0 &= L^{+} - L^{-} =  2 \left[ \sum_{i=1}^{k-1} n_i^2 + \left( N-\sum_{i=1}^{k-1} n_i \right)^2   \right]   - N(N +  1) 
@@ -37,19 +34,15 @@ For the specific case of $k=3$, this results on the curve\\
 		\frac{N \left(N - 1\right)}{4} &=  N \left(n_{1} + n_{2}\right) - n_{1} n_{2}  - n_{1}^{2} - n_{2}^{2}, \label{eq:Lp_eq_Lm}
 	\end{aligned}
 \end{equation}
-}
+\end{frame}
 
-
-\only<+>{
-	\framesubtitle{Minimum of link magnetization}
+\begin{frame}{Minimum of link magnetization}
 Recalling that $M_\ell = \|\vec{n}\|^2  - \frac{N(N+1)}{2}$, and differentiating it in order to find its critical point, we get 
 $$\frac{\p}{\p n_i} \|\vec{n}\| =0,$$
 which we already pointed out it yields to $\vec{n} = \{N / k, \ldots, N / k \}$.
+\end{frame}
 
-}
-
-\only<+>{
-	\framesubtitle{Link states probabilities in terms of link magnetization}
+\begin{frame}{Link states probabilities in terms of link magnetization}
 Both type of  entropies can be written in terms of their respective magnetization, but here we will focus on the link entropy.\\[1em]
 
 Since
@@ -63,9 +56,9 @@ we can express the probabilities $p_{\ell}$ as
 	%\\p_t^{+} &= \frac{1}{2}(1+m_t),\quad
 %    p_t^{-} = \frac{1}{2}(1-m_t).%\label{eq:pt+-_m}
 \end{align*}
-}
+\end{frame}
 
-\only<+>{
+\begin{frame}
  \begin{figure}
     \centering
 	\fbox{\adjincludegraphics[trim={{0.13\width} {0.13\height} {0.07\width} {0.18\height}},clip,height=0.7\textheight]{Tlog}}%
@@ -73,44 +66,73 @@ we can express the probabilities $p_{\ell}$ as
 	\label{fig:Tlog}
 
  \end{figure}
-}
+\end{frame}
 
-\only<+>{
+\begin{frame}
+\begin{equation}
+        s_\ell = - \, \Biggr[\left(\frac{1+m_\ell}{2}\right) \ln\left(\frac{1+m_\ell}{2}\right) + \left(\frac{1-m_\ell}{2}\right)\ln \left(\frac{1-m_\ell}{2}\right)\Biggr]\label{eq:sl_m}
+,\end{equation}
+and
+\begin{equation}
+        s_t = - \, \Biggr[\left(\frac{1+m_t}{2}\right) \ln\left(\frac{1+m_t}{2}\right) + \left(\frac{1-m_t}{2}\right)\ln \left(\frac{1-m_t}{2}\right)\Biggr],\label{eq:st_m}
+\end{equation}
+\end{frame}
+
+\begin{frame}
  \begin{figure}
      \centering
 	 \includegraphics[height=0.7\textheight]{se_me}
-     \caption{Link entropy against link magnetization. Orange line is $s_\ell$ from \cref{eq:s_norms} while blue dots represent configurations from \Cref{fig:ps1}}
+     \caption{Link entropy against link magnetization. Orange line is $s_\ell$ from \cref{eq:sl_m} while blue dots represent configurations from \cref{fig:cf}}
      \label{fig:sL_mL}
  \end{figure}
-}
+\end{frame}
 
-\only<+>{
+\begin{frame}
  \begin{figure}[!h]
      \centering
 	 \includegraphics[height=0.7\textheight]{st_mt}
-     \caption{Triangle entropy against triangle magnetization. Orange line is $s_t$ from \cref{eq:s_norms} while blue dots represent configurations from \Cref{fig:ps1}}
+     \caption{Triangle entropy against triangle magnetization. Orange line is $s_t$ from \cref{eq:st_m} while blue dots represent configurations from \cref{fig:cf}}
      \label{fig:sT_mT}
  \end{figure}
-}
+\end{frame}
 
-\only<+>{
+\subsection{Relating magnetizations}
+
+\begin{frame}{Relating magnetizations}
 	\begin{figure}
     \centering
     \includegraphics[height=0.7\textheight]{mL_mT}
-    \caption{Triangle magnetization with respect to link magnetization. We have used the same label style for the relevant vote scenarios as in \Cref{fig:ps1}, to illustrate the map between the configuration space and the $m_t-m_\ell$ space. Values were computed for $N=155$.\label{fig:mL_mT}} 
+    \caption{Triangle magnetization with respect to link magnetization. We have used the same label style for the relevant vote scenarios as in \Cref{fig:cf}, to illustrate the map between the configuration space and the $m_t-m_\ell$ space. Values were computed for $N=155$.\label{fig:mL_mT}} 
 \end{figure}    
+\end{frame}
 
-}
+\begin{frame}{Relating magnetizations}
+	\begin{equation}A(t) =  \left(\frac{N}{3} - t, \frac{N}{3} - t, \frac{N}{3} +t\right), \label{eq:pathA}\end{equation}
+	\begin{equation}B(t) = \left(\frac{N}{3} -2t,\frac{N}{3}+t,\frac{N}{3}+t\right).\label{eq:pathB}\end{equation}
+	\begin{equation}C(t) = \left(0,\frac{N}{2}-t,\frac{N}{2}+t\right).\label{eq:pathC}\end{equation}
+	   \begin{equation}
+		   D(t,\alpha) = \left(\alpha,\frac{N}{2}-\frac{\alpha}{2}-t,\frac{N}{2}-\frac{\alpha}{2}+t\right).\label{eq:pathD}
+	   \end{equation}
+\end{frame}
 
-\only<+>{
+\begin{frame}{Relating magnetizations}
+\begin{figure}[!h]
+    \centering
+    \adjincludegraphics[trim={{0.16\width} {0.12\height} {0.17\width} {0.12\height}},clip,height=0.7\textheight]{ps_paths}
+    \caption{Configuration space with the same colored circles as in \Cref{fig:cf}, and with paths between these drawn. Only 1/6 of the triangle was marked up, to avoid redundancy due to the symmetry across the triangle. Paths $A, B, C$ and $D$ are defined in \cref{eq:pathA,eq:pathB,eq:pathC,eq:pathD}. The path $D$ was drawn with $\alpha = 5$.}
+    \label{fig:ps_paths}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Relating magnetizations}
 \begin{figure}
     \centering
     \includegraphics[height=0.7\textheight]{mL_mT_paths}
     \caption{Same as in \Cref{fig:mL_mT}, with paths $A,B,C$ and $D$ marked up on it. We followed the same graphic style for paths from \Cref{fig:ps_paths} for easier comparison. Path $D$ was drawn with $\alpha=5$.\label{fig:mL_mT_paths}}
 \end{figure}
-}
+\end{frame}
 
-\only<+>{
+\begin{frame}{Relating magnetizations}
 \begin{equation}
     m_{t} =  \frac{3 \alpha m_{\ell}}{N - 2} + \frac{3\alpha\big[N(1-N)+4\alpha(N-\alpha)\big]}{N(N-1)(N-2)} + 1.
 \label{eq:mT_of_mL}
@@ -122,27 +144,29 @@ The equation for path $A$ is
     \end{split}
     \label{eq:rs}
 \end{equation}
-}
+\end{frame}
 
-\only<+>{
+\subsection{More data results}
+
+\begin{frame}{More data results}
 \begin{figure}[h]
     \centering
 	\includegraphics[height=0.5\textwidth]{ts_ML}
     \caption{Fluctuation of the link magnetization. Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
     \label{fig:ts1}
 \end{figure}
-}
+\end{frame}
 
-\only<+>{
+\begin{frame}{More data results}
 \begin{figure}[h]
     \centering
     \includegraphics[height=0.5\textwidth]{ts_MT}
     \caption{Fluctuation of the triangle magnetization. Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
     \label{fig:ts2}
 \end{figure}
-}
+\end{frame}
 %
-%\only<+>{
+%\begin{frame}{}
 %\begin{figure}[h]
 %    \centering
 %    \includegraphics[height=0.5\textwidth]{ts_SL}
@@ -150,7 +174,7 @@ The equation for path $A$ is
 %    \label{fig:ts3}
 %\end{figure}
 %}
-%\only<+>{
+%\begin{frame}{}
 %\begin{figure}[h]
 %    \centering
 %    \includegraphics[height=0.5\textwidth]{ts_ST}
@@ -158,7 +182,7 @@ The equation for path $A$ is
 %    \label{fig:ts4}
 %\end{figure}
 %
-%\only<+>{
+%\begin{frame}{}
 %\begin{figure}[h]
 %    \centering
 %    \includegraphics[height=0.5\textwidth]{ts_T}
@@ -167,7 +191,6 @@ The equation for path $A$ is
 %\end{figure}
 %}
 
-\end{frame}
 
 
 
