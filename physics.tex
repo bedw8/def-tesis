@@ -172,16 +172,20 @@ Also, average entropies will be defined:
 \end{itemize}
 
 For this, for a single triangle $t$ we have defined the energy function $h$ as
-\begin{equation}
+\begin{equation*}
     h(t) = - \sum_{\mathclap{\text{sides of $t$}}} \text{sign of the side} 
-\end{equation}
+\end{equation*}
 which is the negative sum of their sides. This would lead us to
-\begin{equation}
-        h(+++) = -3,\qquad
-		h(+--) = -1,\qquad
-		h(---) = 3,
+\begin{center}
+	\includesvg[width=0.7\columnwidth]{tri}
+\end{center}
+\vspace{-1mm}
+\begin{equation*}
+        h(+++) = -3,\qquad\quad
+		h(---) = 3,\qquad\quad
+		h(+--) = -1,
     \label{eq:h_types}
-\end{equation}
+\end{equation*}
 for each triangle type.\\[1em]
 \end{frame}
 
@@ -214,17 +218,16 @@ where
 In our case we would have
 
 \begin{align}
-    \frac{1}{T} &=  \frac{\partial S_\ell}{\partial H}  = \frac{\p S_\ell}{\p m_\ell} \frac{\p m_\ell}{\p H}
+    \frac{1}{T} &=  \frac{\partial S_\ell}{\partial H}  
 \end{align}
-but we still need to relate entropy with magnetizations
 \end{frame}
 
 \begin{frame}{Temperature}
 Expressing the link entropy as
-\begin{equation}
+\begin{equation*}
         S_\ell = - L\, \Biggr[\left(\frac{1+m_\ell}{2}\right) \ln\left(\frac{1+m_\ell}{2}\right) + \left(\frac{1-m_\ell}{2}\right)\ln \left(\frac{1-m_\ell}{2}\right)\Biggr]\label{eq:Sl_m},
-\end{equation}
-we can solve for $T$ on 
+\end{equation*}
+we can solve for $\frac{1}{T}$. 
 \begin{align*}
     \frac{1}{T} &= \frac{\p S_\ell}{\p m_\ell} \frac{\p m_\ell}{\p H}.
 \end{align*}
