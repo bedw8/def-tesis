@@ -53,19 +53,7 @@ We still want to count each kind of links (unsigned and signed) and each kind of
 
 \newcommand{\tikzmark}[1]{\tikz[baseline,remember picture] \coordinate (#1) {};}
 \begin{frame}[b]{Counting links}
-\setbeamercovered{invisible}
 \begin{itemize}
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[] 
-	\item[]
-	\item[]
 	\item<+(1)-> Positive links \begin{equation}
 		L^{+} = \frac{1}{2}\sum_i^k n_i^2 - \frac{1}{2}\sum_i^{k} {n_i} =  \frac{1}{2} \|\vec n\|^2 - \frac{N}{2}. \label{eq:Lplus} \end{equation}
 		\item<+(1)-> Negative links 
@@ -73,46 +61,42 @@ We still want to count each kind of links (unsigned and signed) and each kind of
 L^{-} = \tikzmark{bsum}\sum_{i<j}^k n_in_j\tikzmark{asum} = \frac{N^{2}}{2} - \frac{1}{2}\|\vec n\|^2 \label{eq:Lminus} 
 \end{equation}
 \end{itemize}
+\vspace{-1.1em}
 
 \def\keeplast{\ifnum\n<3 \onslide<+(-2)> \else \onslide<+(-2)->\fi}
 \foreach \n in {1,...,3}{
 	\keeplast{%
-	\begin{tikzpicture}[remember picture, overlay]
-		\node[at=(current page.center),anchor=center,shift=({-13mm,7mm})] {%
-				\includegraphics[width=0.9\columnwidth]{count-links-step-\n.pdf}
-		};
-	\end{tikzpicture}
-	}
+	\fullsizegraphic[1.1]{count-links-step-\n.pdf}}
 }
 
-\foreach \i in {1,...,1}{%
-\pgfmathtruncatemacro\z{\i+4}%
-\onslide<+(-2)>{%
-\begin{tikzpicture}[remember picture, overlay]
-	\node[at=(current page.east),
-		anchor=east,
-		shift=({-12mm,17mm})] (matrix) {%
-        \includegraphics{svg/nxn-step-\i.pdf} };
-	\node[at=(matrix.north),shift=({0cm,2mm})] {$\vec{n}\otimes \vec{n}$};
-\end{tikzpicture}	
-	}
-}
-
-\begin{tikzpicture}[remember picture, overlay]
-	\node[red,draw, 
-		  at=(bsum.west),
-		  anchor=west,
-		  inner sep=6.2mm,
-		  outer sep=1mm,
-		  shift=({-1mm,0.5mm}),
-		  visible on=<+(-3)>] (highlight) {};	
-	  \draw[-stealth,red,visible on=<.(-3)>] (highlight.south east) to[out=-25,in=-90,distance=3cm] (matrix.south);
-\end{tikzpicture}
+%\foreach \i in {1,...,1}{%
+%\pgfmathtruncatemacro\z{\i+4}%
+%\onslide<+(-2)>{%
+%\begin{tikzpicture}[remember picture, overlay]
+%	\node[at=(current page.east),
+%		anchor=east,
+%		shift=({-12mm,17mm})] (matrix) {%
+%        \includegraphics{svg/nxn-step-\i.pdf} };
+%	\node[at=(matrix.north),shift=({0cm,2mm})] {$\vec{n}\otimes \vec{n}$};
+%\end{tikzpicture}	
+%	}
+%}
+%
+%\begin{tikzpicture}[remember picture, overlay]
+%	\node[red,draw, 
+%		  at=(bsum.west),
+%		  anchor=west,
+%		  inner sep=6.2mm,
+%		  outer sep=1mm,
+%		  shift=({-1mm,0.5mm}),
+%		  visible on=<+(-3)>] (highlight) {};	
+%	  \draw[-stealth,red,visible on=<.(-3)>] (highlight.south east) to[out=-25,in=-90,distance=3cm] (matrix.south);
+%\end{tikzpicture}
 
 \end{frame}
 
 \begin{frame}[b]{Counting triangles}{Type $+++$} \foreach \n in {1,...,2}{
-        \only<\n>{\fullsizegraphic{count-t+++-step-\n.pdf}}
+		\only<\n>{\fullsizegraphic[1.1]{count-t+++-step-\n.pdf}}
 }
 
 	Similar to positive links, this type of triangles are only present inside of the groups.%
@@ -125,7 +109,7 @@ L^{-} = \tikzmark{bsum}\sum_{i<j}^k n_in_j\tikzmark{asum} = \frac{N^{2}}{2} - \f
 
 \begin{frame}[b]{Counting triangles}{Type $---$}
 \foreach \n in {1,...,2}{
-        \only<\n>{\fullsizegraphic{count-t----step-\n.pdf}}
+	\only<\n>{\fullsizegraphic[1.1]{count-t----step-\n.pdf}}
     }
 
 These triangles will be formed by three communities putting one node each one. 
@@ -138,7 +122,7 @@ These triangles will be formed by three communities putting one node each one.
 
 \begin{frame}[b]{Counting triangles}{Type $+--$}
  \foreach \n in {1,...,2}{
-	         \only<\n>{\fullsizegraphic{count-t+---step-\n.pdf}}
+	 \only<\n>{\fullsizegraphic[1.1]{count-t+---step-\n.pdf}}
  }
 
 Finally, the remaining type of triangle is counted as follows

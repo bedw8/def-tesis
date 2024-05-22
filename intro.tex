@@ -4,16 +4,14 @@
 
 \begin{frame}{Context}
 	\centering
-	\includesvg[inkscapearea=page,width=0.5\columnwidth]{dip}
+	\includesvg[inkscapearea=page,width=0.8\columnwidth]{dip}
 
-	We wanted to study the Chilean Chamber of Deputies and its (political) polarization.\\[1em]
+	\onslide<+->{We wanted to study the Chilean Chamber of Deputies and its (political) polarization.\\[1em]}
 
-	In order to accomplish that, we built a model using tools from \textbf<+(1)->{\emph<1>{graph theory}} and \textbf<+(1)>{\emph<1>{statistical mechanics}}.
+	In order to accomplish that, we built a model using tools from \textbf<+->{graph theory} and \textbf<+->{statistical mechanics}.
 	
-\onslide<+(1)->{%
-	\vspace{3em}
-	Parliament $\to$ Network  $\to$ Spin systems
-}
+\vspace{2em}
+\onslide<+->{Parliament} \onslide<+->{$\to$ Network} \onslide<+>{$\to$ Spin systems}
 
 \end{frame}
 
@@ -21,60 +19,52 @@
 \begin{frame}[b]{Graph theory}{What is a graph?}
 	\centering
 	\subimport{figures/nodos-intro}{overlay}
-	{\setbeamercovered{invisible}
-	\begin{itemize}[<+(-3)->]
-		\item Nodes and links\only<+(-3)->{, that may have direction}\only<+(-3)->{, and weights}
-		%\item geography, ecology, social sciences, and many more.
-\end{itemize}}
+	\begin{itemize}
+		\only<+(-3)->{\item Nodes and links}\only<+(-3)->{, that may have direction}\only<+(-3)->{, and weights}
+	\end{itemize}
+	\vspace{2em}
 \end{frame}
 
-%\begin{frame}{Random vs real networks}{}
-%	\centering
-%	\setcaptiontype{figure}
-%	\subcaptionbox{Random network}{\includesvg[width=0.45\columnwidth]{random-net}}\hspace{2ex}
-%	\subcaptionbox{Scale-free network}{\includesvg[width=0.45\columnwidth]{scalefree-net}}
-%\end{frame}
-
 \begin{frame}[t]{Some examples of networks}{}
-	\only<1>{%
+	\only<+>{%
 	Computer networks
 	}
-	\only<2>{%
-	Biological networks
-	}
-	\only<3>{%
+	\only<+>{%
 	Infrastructure networks
 	}
-	\only<4>{%
+	\only<+>{%
 	Social networks
 	}
 \foreach \n in {1,...,4}{
-	\only<+>{\fullsizegraphic{complex-step-\n.pdf}}
+	\ifnum\n =2 
+	\else
+	\only<+(-3)>{\fullsizegraphic{complex-step-\n.pdf}}
+	\fi
 }
 \end{frame}
 
 \begin{frame}[t]{Social networks}{}
-	\only<1>{\vspace{10em}\centering In these networks nodes represent people.}	
-	\begin{itemize}[<+(1)->]
+	\only<+>{\vspace{10em}\centering In these networks nodes represent people.}	
+	\begin{itemize}[<+->]
 		\item Friendship network
 		\item Criminal networks
 		\item \textbf{Political networks} 
 	\end{itemize}
 \foreach \n in {5,...,6}{
-	\only<+(-2)>{\fullsizegraphic{complex-step-\n.pdf}}
+	\only<+(-3)>{\fullsizegraphic{complex-step-\n.pdf}}
 }
 \end{frame}
 
 
 \subsection{Legislative networks}
 \begin{frame}{Legislative networks}{A specific type of political networks}
-	\only<1>{\vspace{10em}\centering In these networks nodes represent legislators.}
+	\only<+>{\vspace{10em}\centering In these networks nodes represent legislators.}
 	\foreach \n in {1,...,6}{
-		        \only<+(1)>{\fullsizegraphic{papers-leg-step-\n.pdf}}
+		        \only<+>{\fullsizegraphic{papers-leg-step-\n.pdf}}
 	}
-	\only<+(1)->{\fullsizegraphic{papers-leg-step-7.pdf}}
+	\only<+->{\fullsizegraphic{papers-leg-step-7.pdf}}
 	\vspace{5cm}
-	\begin{itemize}[<+(1)->]
+	\begin{itemize}[<+->]
 		\item Co-sponsorship to bills
 		\item \textbf<+->{Coordination on roll-call votes}
 	\end{itemize}
@@ -125,9 +115,9 @@
 	\vspace{3em}
 	\onslide<-6>{
 	\begin{itemize}[<+(+2)->]
-		\item If all three people are friend, there is \textbf{no conflict} 
-		\item If all three people are enemies, there is \textbf{conflict} 
-		\item If two people are enemies from the third, there is \textbf{no conflict} \item If only two people are enemies, there is \textbf{conflict} 
+		\item If all three people are friend, there is \textbf{is balance} 
+		\item If all three people are enemies, there is \textbf{no balance} 
+		\item If two people are enemies from the third, there is \textbf{balance} \item If only two people are enemies, there is \textbf{no balance} 
 \end{itemize}}
 	\end{minipage}
 	\foreach \n in {1,...,7}{

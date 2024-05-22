@@ -9,22 +9,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Entropy}{\phantom{ }}
-\onslide<+->{%
+\only<+-2>{
 Shannon entropy for a system is defined by 
 \begin{equation}
-    S = -\k D\sum_{s\,\in\,\text{states}} p^{s} \ln p^{s},\label{eq:S_shann}
+	S = -\k \tilde{D}\sum_{\mathclap{s\,\in\,\text{states}}} \tilde{p}^{s} \ln \tilde{p}^{s},\label{eq:S_shann_orig}
+\end{equation}
+where $\tilde{D}$ is the total number of spins and $\tilde{p}^{s}$ are the probabilities of finding a spin on a state $s$.\\[1em]
+
+\onslide<+->{%
+In this case, we are going to use it as 
+\begin{equation}
+    S = - D\sum_{\mathclap{s\,\in\,\text{states}}} p^{s} \ln p^{s},\label{eq:S_shann}
 \end{equation}
 where $D$ is the total number of spins and $p^{s}$ are the probabilities of finding a spin on a state $s$.}
+}
+\only<+->{
 \onslide<+->{%
 \begin{itemize}
 	\item For links:
 \begin{equation}
     \label{eq:Sl}
-	S_\ell  = - \k L \Big[ p_\ell^+\ln(p_\ell^+) + p_\ell^-\ln(p_\ell^-) \Big], 
+	S_\ell  = - L \Big[ p_\ell^+\ln(p_\ell^+) + p_\ell^-\ln(p_\ell^-) \Big], 
 \end{equation}
 	\item For triangles:
 \begin{equation}
-    S_t = - \k C \left[ p_t^+\ln(p_t^+) + p_t^-\ln(p_t^-) \right], \label{eq:St}
+    S_t = - C \Big[ p_t^+\ln(p_t^+) + p_t^-\ln(p_t^-) \Big], \label{eq:St}
 \end{equation}}
 \end{itemize}
 \onslide<+>{%
@@ -40,7 +49,7 @@ Also, average entropies will be defined:
 	\label{eq:st}
     s_t = \frac{S_t}{C}
 \end{equation}
-\end{itemize}}
+\end{itemize}}}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,57 +80,12 @@ Also, average entropies will be defined:
 \end{figure}
 \end{frame}
 
-\begin{frame}[t]{Results for link entropy}{Critical points}
-	\setlength\fboxrule{0.5pt}
-	\setlength\fboxsep{4pt}
-\fbox{\begin{minipage}{0.6\textwidth}
-		Let's recall that
-		$$s_\ell =  - \k \Big[ p_\ell^+\ln(p_\ell^+) + p_\ell^-\ln(p_\ell^-) \Big],$$
-		$$		p_\ell^{+} = \frac{L^{+}}{L},\qquad\text{and}\qquad		L^{+} = \left( \frac{1}{2}\|\vec{n}\|^2 - \frac{N}{2}\right)$$
-\end{minipage}}\\[1em]
-
-We differentiate $s_\ell$ to get its critical points.
-\begin{align}
-	\frac{\p s_\ell }{\p n_i} &= \frac{\p s_\ell}{\p p^{+}} \frac{\p p^{+}}{\p n_i} = -\k \bigg[ \ln(p^{+}) - \ln(p^{-}) \bigg] \left[ \frac{\|\vec{n}\|}{L}  \frac{\p}{\p n_i} \|\vec{n}\|  \right] 
-.\end{align}
-\\[2em]
-
-\begin{itemize}
-	\item $\left[ \frac{\|\vec{n}\|}{L}  \frac{\p}{\p n_i} \|\vec{n}\|  \right] =0\qquad  \to \qquad \vec{n} = \{N / k, \ldots, N / k \}$ 
-	\item $\Big[ \ln(p^{+}) - \ln(p^{-}) \Big] = 0 \qquad \to \qquad L^{+} = L^{-}$
-\end{itemize}
-	
-\end{frame}
-
-\begin{frame}{Results for link entropy}{Maximum for Link entropy}
-We can get an expression for the points where $L^{+}=L^{-}$.
-\begin{align*}
-     0 &= L^{+} - L^{-} =  2 \left[ \sum_{i=1}^{k-1} n_i^2 + \left( N-\sum_{i=1}^{k-1} n_i \right)^2   \right]   - N(N +  1) 
-.\end{align*}
-\begin{minipage}[c]{0.44\textwidth}
-For the specific case of $k=3$, this results on the curve\\
-	\strut\vspace*{-\baselineskip}\newline
-	\begin{equation}
-		\begin{aligned}
-		    \frac{N \left(N - 1\right)}{4} &=  N \left(n_{1} + n_{2}\right) \\
-			&- n_{1} n_{2} \\
-			& - n_{1}^{2} - n_{2}^{2}, \label{eq:Lp_eq_Lm}
-		\end{aligned}
-	\end{equation}
-	which is plotted on \Cref{fig:Lp_eq_Lm}. \\
-
-The drawn ellipsis is consistent with the maximum observed on \Cref{fig:SL}.
-\end{minipage}
-\hspace{4mm}
-\begin{minipage}[c]{0.47\textwidth}
-\strut\vspace*{-\baselineskip}\newline
-\begin{center}
-	\vspace{-5mm}
-	\includegraphics[width=1\linewidth]{elipse}
-	\captionof{figure}{Subspace of the configuration space where link entropy is maximum. View from above.}
-    \label{fig:Lp_eq_Lm}
-\end{center}
-\end{minipage}
+\begin{frame}{Results for link entropy}
+	\makebox[\textwidth]{%
+	\adjincludegraphics[trim={{0.18\width} {0.135\height} {0.13\width} {0.184\height}},clip,width=0.65\linewidth]{SE}
+	\includegraphics[width=0.47\linewidth]{elipse}
+}
+\captionof{figure}{\textbf{Link entropy} from \Cref{fig:SL} next to its maximum which was derived analytically.}
 \end{frame}
 
 \begin{frame}{Results for triangle entropy}
@@ -234,7 +198,7 @@ Since the network is fully-connected, each link belong to $(N-2)$ triangles. And
 
 %%%%%%%%%
 
-\begin{frame}{Temperature}{\phantom{ }}
+\begin{frame}{Temperature}
 
 Thermodynamical definition of temperature:
 \begin{equation}
@@ -255,40 +219,19 @@ In our case we would have
 but we still need to relate entropy with magnetizations
 \end{frame}
 
-\begin{frame}{Temperature}{Relating entropy with magnetization}
-Both type of  entropies can be written in terms of their respective magnetization, but here we will focus on the link entropy.\\[1em]
-
-Since
-\begin{align*}
-	m_\ell &= p_{\ell}^{+} - p_{\ell}^{-},\qquad  p_{\ell}^{+} + p_{\ell}^{-} = 1\\
-	%m_t &= p_{t}^{+} - p_{t}^{-},\qquad  p_{t}^{+} + p_{t}^{-} = 1,
-\end{align*}
-we can express the probabilities $p_{\ell}$ as
-\begin{align*}
-    p_\ell^{+} &= \frac{1}{2}(1+m_\ell), \quad p_\ell^{-} = \frac{1}{2}(1-m_\ell),%\label{eq:pl+-_m}\\
-	%\\p_t^{+} &= \frac{1}{2}(1+m_t),\quad
-%    p_t^{-} = \frac{1}{2}(1-m_t).%\label{eq:pt+-_m}
-\end{align*}
-Then, the link entropy result
-\begin{equation}
-        S_\ell = - L\,\k \Biggr[\left(\frac{1+m_\ell}{2}\right) \ln\left(\frac{1+m_\ell}{2}\right) + \left(\frac{1-m_\ell}{2}\right)\ln \left(\frac{1-m_\ell}{2}\right)\Biggr]\label{eq:Sl_m}.
-\end{equation}
-%and
-%\begin{equation}
-%        S_t = - C\,\k \Biggr[\left(\frac{1+m_t}{2}\right) \ln\left(\frac{1+m_t}{2}\right) + \left(\frac{1-m_t}{2}\right)\ln \left(\frac{1-m_t}{2}\right)\Biggr],\label{eq:St_m}
-%\end{equation}
-%for links and triangles, respectively. 
-\end{frame}
-
 \begin{frame}{Temperature}
-Now we can solve for $T$ on 
+Expressing the link entropy as
+\begin{equation}
+        S_\ell = - L\, \Biggr[\left(\frac{1+m_\ell}{2}\right) \ln\left(\frac{1+m_\ell}{2}\right) + \left(\frac{1-m_\ell}{2}\right)\ln \left(\frac{1-m_\ell}{2}\right)\Biggr]\label{eq:Sl_m},
+\end{equation}
+we can solve for $T$ on 
 \begin{align*}
     \frac{1}{T} &= \frac{\p S_\ell}{\p m_\ell} \frac{\p m_\ell}{\p H}.
 \end{align*}
 
 After solving both partial derivatives we get 
 \begin{equation}
-	T = (N-2)\frac{2}{\k}\left[\ln \left(\frac{1+m_\ell}{1-m_\ell}\right) \right]^{-1}\label{eq:T_final}
+	T = 2(N-2)\left[\ln \left(\frac{1+m_\ell}{1-m_\ell}\right) \right]^{-1}\label{eq:T_final}
 \end{equation}
 
 \end{frame}
@@ -301,7 +244,7 @@ After solving both partial derivatives we get
     \centering
     \fbox{\adjincludegraphics[trim={{0.13\width} {0.12\height} {0.11\width} {0.17\height}},clip,height=0.78\textheight]{Tps}}%
 	\vspace{-1mm}
-    \caption{\textbf{Temperature} on top of the configuration space. Plotted with $N=155$ and $\k=1.$}
+    \caption{\textbf{Temperature} on top of the configuration space. Plotted with $N=155$.}
     \label{fig:Tps}
 \end{figure}
 \end{frame}
@@ -329,17 +272,17 @@ After solving both partial derivatives we get
 	\begin{align*}
 		M_\ell &= L\,m_\ell\\
 		H &= -(N-2)M_{\ell}\\
-		T &= (N-2)\frac{2}{\k}\left[\ln \left(\frac{1+m_\ell}{1-m_\ell}\right) \right]^{-1}
+		T &= 2(N-2)\left[\ln \left(\frac{1+m_\ell}{1-m_\ell}\right) \right]^{-1}
 	\end{align*}
 \end{minipage}}\\[1em]
 
 	If we isolate $m_\ell$ from the temperature expression, we get that 	
 \begin{equation}
-    m_\ell = \tanh \left(\frac{N-2}{\k T}\right).\label{eq:ml_of_T}
+    m_\ell = \tanh \left(\frac{N-2}{T}\right).\label{eq:ml_of_T}
 \end{equation}
 Now, joining it with the expressions for $H$ and $M_\ell$, it yield us that
 \begin{align}
-    H = -(N-2)L\tanh \left(\frac{N-2}{\k T}\right). \label{eq:H_of_T}
+    H = -(N-2)L\tanh \left(\frac{N-2}{T}\right). \label{eq:H_of_T}
 \end{align}
 \end{frame}
 
@@ -347,7 +290,7 @@ Now, joining it with the expressions for $H$ and $M_\ell$, it yield us that
 	\begin{figure}[h]
 	    \centering
 		\includegraphics[height=0.65\textheight]{T_H}
-	    \caption{Hamiltonian against temperature, from \cref{eq:H_of_T} with $N=155$ and $\k=1$. $H$ is not defined of for $T=0$, but in the plot it was considered as zero for looking purposes.}
+	    \caption{Hamiltonian against temperature, from \cref{eq:H_of_T} with $N=155$. $H$ is not defined of for $T=0$, but in the plot it was considered as zero for visualization purposes.}
 	    \label{fig:T_H_out}
 	\end{figure}    
 \end{frame}

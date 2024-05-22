@@ -2,16 +2,16 @@
 \section{The model}
 \subsection{Building network}
 
-\begin{frame}[b]{Our proposed model}
+\begin{frame}[c]{Our proposed model}
 	\centering
-	Following, we will present the proposed model of this work\\[10em]
-	
-	\setbeamercovered{invisible}
-	\onslide<+(1)->{%
-	\begin{itemize}
+	\phantom{a}
+	\\[3em]
+	Following, we will present the proposed model of this work
+	\\[2em]
+	\begin{itemize}[<+(1)->]
 		\item How to build a \textbf{network} from roll-call \textbf{votes}?
 		\item Elaboration of \textbf{two spin systems} and their respective statistical mechanical properties.
-\end{itemize}}
+	\end{itemize}
 \end{frame}
 
 \subsection{Building a network from roll-call votes}
@@ -36,6 +36,7 @@
 		\item Legislators that voted the {\color{blue}same} are connected with a {\color{blue}positive} link.
 		\item<.(2)-> Legislators that voted {\color{red}different} are connected with a {\color{red}negative} link.
 	\end{itemize}
+	\vspace{2em}
 \end{frame}
 
 \begin{frame}[b]{How to identify a vote configuration?}
@@ -77,6 +78,7 @@
 \end{frame}
 
 \begin{frame}{Configuration space}
+	\vspace{-1mm}
 	\setlength{\fboxsep}{0pt}
 	\setlength{\fboxrule}{0pt}
 	\begin{center}
@@ -86,6 +88,7 @@
 							height=0.83\textheight]
 						{figs-poster/phasespace_plane}}
 		\label{fig:cf}
+		\vspace{-1mm}
 		\captionof{figure}{Configuration space for $k=3$ and $N=155$. The axes $n_1,n_2$ and $n_3$ represent the amount of support for such vote option.}
 	\end{center}
 \end{frame}
