@@ -58,7 +58,19 @@ we can express the probabilities $p_{\ell}$ as
 \end{align*}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Size of the system for $H$}
+	Noting that $N-2 = \frac{3C}{L}$
+	\[
+		H = -\frac{3C}{L}M_\ell.\label{eq:H_M}
+	\]
+	and
+	\[
+		H = -\frac{3C}{L}L\tanh \left(\frac{N-2}{T}\right). 
+	\]
+\end{frame}
+
+\subsection{More Temperature figures}
+\begin{frame}{Logarithm of $T$}
  \begin{figure}
     \centering
 	\fbox{\adjincludegraphics[trim={{0.13\width} {0.13\height} {0.07\width} {0.18\height}},clip,height=0.7\textheight]{Tlog}}%
@@ -68,7 +80,16 @@ we can express the probabilities $p_{\ell}$ as
  \end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Representation of $1/T$}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{triangle3d-1T.pdf}
+	\caption{Representation of $\frac{1}{T}$ over the config space triangle.}
+\end{figure}	
+\end{frame}
+
+
+\begin{frame}{Entropy in terms of magnetization}
 \begin{equation}
         s_\ell = - \, \Biggr[\left(\frac{1+m_\ell}{2}\right) \ln\left(\frac{1+m_\ell}{2}\right) + \left(\frac{1-m_\ell}{2}\right)\ln \left(\frac{1-m_\ell}{2}\right)\Biggr]\label{eq:sl_m}
 ,\end{equation}
@@ -78,7 +99,7 @@ and
 \end{equation}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Link entropy and link magnetization}
  \begin{figure}
      \centering
 	 \includegraphics[height=0.7\textheight]{se_me}
@@ -87,7 +108,7 @@ and
  \end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Triangle entropy and triangle magnetization}
  \begin{figure}[!h]
      \centering
 	 \includegraphics[height=0.7\textheight]{st_mt}
@@ -148,7 +169,7 @@ The equation for path $A$ is
 
 \subsection{More data results}
 
-\begin{frame}{More data results}
+\begin{frame}{Link magnetization}
 \begin{figure}[h]
     \centering
 	\includegraphics[height=0.5\textwidth]{ts_ML}
@@ -157,7 +178,7 @@ The equation for path $A$ is
 \end{figure}
 \end{frame}
 
-\begin{frame}{More data results}
+\begin{frame}{Triangle magnetization}
 \begin{figure}[h]
     \centering
     \includegraphics[height=0.5\textwidth]{ts_MT}
@@ -165,31 +186,33 @@ The equation for path $A$ is
     \label{fig:ts2}
 \end{figure}
 \end{frame}
-%
-%\begin{frame}{}
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[height=0.5\textwidth]{ts_SL}
-%    \caption{Fluctuation of the link entropy (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
-%    \label{fig:ts3}
-%\end{figure}
-%}
-%\begin{frame}{}
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[height=0.5\textwidth]{ts_ST}
-%    \caption{Fluctuation of the triangle magnetization (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
-%    \label{fig:ts4}
-%\end{figure}
-%
-%\begin{frame}{}
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[height=0.5\textwidth]{ts_T}
-%    \caption{Fluctuation of the T (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
-%    \label{fig:ts5}
-%\end{figure}
-%}
+
+\begin{frame}{Link entropy}
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_SL}
+    \caption{Fluctuation of the link entropy (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts3}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Triangle magnetization}
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_ST}
+    \caption{Fluctuation of the triangle magnetization (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts4}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Temperature}
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.5\textwidth]{ts_T}
+    \caption{Fluctuation of the T (computed with $\k=1$). Top panel: raw series; lower panel: average every 50 consecutive data points. Red lines represent the mean value for each plot.}
+    \label{fig:ts5}
+\end{figure}
+\end{frame}
 
 
 
